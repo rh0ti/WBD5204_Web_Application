@@ -1,3 +1,22 @@
+<?php
+
+require_once 'app/init.php';
+
+$itemsQuery = $db->prepare("
+SELECT id, name, done
+FROM items
+WHERE user = :user
+");
+
+$itemsQuery->execute([
+'user' => $_SESSION ['user_id']
+]);
+
+$items = $itemsQuery->rowCount() ? $itemsQuery : [];
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,15 +33,20 @@
     <div class="list">
         <h1 class="header">Wish List</h1>
 
+        <?php if(!empty($items)): ?>
         <ul class="items">
-            <li>
-                <span class="item">Pick up Shopping</span>
-                <a href="#" class="done-button">Mark as done</a>
-            </li>
-            <li>
-                <span class="item done">Learn PHP</span>
-            </li>
+            <?php foreach($items as $item): ?>
+                <li>
+                    <span class="item<?php echo $item['done'] ? ' done' : '' ?>"><?php echo $item['name']; ?></span>
+                    <?php if(!$item['done']): ?>
+                        <a href="mark.php?as=done&item=<?php echo $item['id'];?>" class="done-button">Mark as done</a>
+                    <?php endif ?>
+                </li>
+            <?php endforeach; ?>
         </ul>
+        <?php else: ?>
+            <p>You haven't added any wishes yet!</p>
+        <?php endif; ?>
 
         <form class="item-add" action="add.php" method="POST">
             <input type="text" name="name" placeholder="Type in a new wish" class="input" autocomplete="off" required>
