@@ -1,5 +1,7 @@
 <?php
 
+//Verbindung Datenbank
+
 session_start();
 
 $_SESSION['user_id'] = 1;
