@@ -7,7 +7,7 @@ require 'db_conn.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>To-Do List</title>
+    <title>Wish List</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -24,17 +24,17 @@ require 'db_conn.php';
              <?php }else{ ?>
               <input type="text" 
                      name="title" 
-                     placeholder="What do you need to do?" />
+                     placeholder="Type in your wish." />
               <button type="submit">Add &nbsp; <span>&#43;</span></button>
              <?php } ?>
           </form>
        </div>
        <?php 
-          $todos = $conn->query("SELECT * FROM todos ORDER BY id DESC");
+          $wish = $conn->query("SELECT * FROM todos ORDER BY id DESC");
        ?>
-       <div class="show-todo-section">
-            <?php if($todos->rowCount() <= 0){ ?>
-                <div class="todo-item">
+       <div class="show-wish-section">
+            <?php if($wish->rowCount() <= 0){ ?>
+                <div class="wish-item">
                     <div class="empty">
                         <img src="img/f.png" width="100%" />
                         <img src="img/Ellipsis.gif" width="80px">
@@ -42,34 +42,34 @@ require 'db_conn.php';
                 </div>
             <?php } ?>
 
-            <?php while($todo = $todos->fetch(PDO::FETCH_ASSOC)) { ?>
-                <div class="todo-item">
-                    <span id="<?php echo $todo['id']; ?>"
-                          class="remove-to-do">x</span>
-                    <?php if($todo['checked']){ ?> 
+            <?php while($wishlist = $wish->fetch(PDO::FETCH_ASSOC)) { ?>
+                <div class="wish-item">
+                    <span id="<?php echo $wishlist['id']; ?>"
+                          class="remove-wish">x</span>
+                    <?php if($wishlist['checked']){ ?> 
                         <input type="checkbox"
                                class="check-box"
-                               data-todo-id ="<?php echo $todo['id']; ?>"
+                               data-wish-id ="<?php echo $wishlist['id']; ?>"
                                checked />
-                        <h2 class="checked"><?php echo $todo['title'] ?></h2>
+                        <h2 class="checked"><?php echo $wishlist['title'] ?></h2>
                     <?php }else { ?>
                         <input type="checkbox"
-                               data-todo-id ="<?php echo $todo['id']; ?>"
+                               data-wish-id ="<?php echo $wishlist['id']; ?>"
                                class="check-box" />
-                        <h2><?php echo $todo['title'] ?></h2>
+                        <h2><?php echo $wishlist['title'] ?></h2>
                     <?php } ?>
                     <br>
-                    <small>created: <?php echo $todo['date_time'] ?></small> 
+                    <small>created: <?php echo $wishlist['date_time'] ?></small> 
                 </div>
             <?php } ?>
        </div>
     </div>
 
-    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
     <script>
         $(document).ready(function(){
-            $('.remove-to-do').click(function(){
+            $('.remove-wish').click(function(){
                 const id = $(this).attr('id');
                 
                 $.post("app/remove.php", 
@@ -85,7 +85,7 @@ require 'db_conn.php';
             });
 
             $(".check-box").click(function(e){
-                const id = $(this).attr('data-todo-id');
+                const id = $(this).attr('data-wish-id');
                 
                 $.post('app/check.php', 
                       {
