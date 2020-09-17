@@ -8,7 +8,7 @@ if(isset($_POST['title'])){
     if(empty($title)){
         header("Location: ../index.php?mess=error");
     }else {
-        $stmt = $conn->prepare("INSERT INTO todos(title) VALUE(?)");
+        $stmt = $conn->prepare("INSERT INTO wish(title) VALUE(?)");
         $res = $stmt->execute([$title]);
 
         if($res){

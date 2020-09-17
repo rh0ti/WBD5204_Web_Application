@@ -30,7 +30,7 @@ require 'db_conn.php';
           </form>
        </div>
        <?php 
-          $wish = $conn->query("SELECT * FROM todos ORDER BY id DESC");
+          $wish = $conn->query("SELECT * FROM wish ORDER BY id DESC");
        ?>
        <div class="show-wish-section">
             <?php if($wish->rowCount() <= 0){ ?>
