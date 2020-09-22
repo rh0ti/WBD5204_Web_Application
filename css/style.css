@@ -14,3 +14,16 @@ body{
     width: 100vw;
     background-color: #FCCC7F;
 }
+
+.navigation{
+    height: 20vh;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.navigation img{
+    height: 55%;
+    margin: 10px;
+    position: relative;
+    left: -10%;
+}
