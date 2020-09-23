@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow|Cinzel|Julius+Sans+One|Poiret+One|Quicksand|Raleway&display=swap');
+
+/* My CSS Reset */
+*{
+	margin: 0;
+	padding: 0;
+	}
+
+*, *:after, *:before{
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+body{
+    font-family: 'Quicksand', sans-serif;
+    /* background: black; */
+}
+
+
+.text h1{
+    font-size: 60px;
+    color: #fff;
+    font-weight: 500;
+}
+
+
+.text p{
+    font-size: 20px;
+    color: #fff;
+    font-weight: 300;
+}
+
+.text p a{
+    color: #fff;
+    font-weight: 700;
+}
+
+.form{
+    background: transparent;
+    color: #fff;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+}
+
+input{
+    margin: 20px 0;
+    padding: 10px;
+    border: none;
+    outline: none;
+    color: black;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.username, .password,.password2, .email{
+    border-bottom: 1px solid #fff;
+    
+}
+
+.button{
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 19px;
+
+}
+
+.button:hover{
+    background: #fff;
+    color: #000;
+
+}
+
+ .error{
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+
+}
+
+
+.success{
+    color: white;
+    background: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+
+}
+
+.info{
+    color: white;
+    background: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+
+}
