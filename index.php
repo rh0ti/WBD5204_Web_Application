@@ -16,16 +16,15 @@
 <img src="img/logo.png" alt="">
 <h1 class="logo-title">Wishliist.</h1>
 
+<a class="login-button" href="login.php">Login</a>
 
-<a class="login-button" href="#">Login</a>
-
-<a class="signup-button" href="#">Get Started</a>
+<a class="signup-button" href="signup.php">Get Started</a>
 
 </div>
 <h1>Create your own <br> wishlist.</h1>
 <p>And share it with your friends.</p>
 
-<a class="create-button" href="#">Create your free profile >></a>
+<a class="create-button" href="signup.php">Create your free profile >></a>
 
 <img class="gift-girl" src="img/girl.png" alt="Girl with Gift">
 

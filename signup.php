@@ -1,12 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Wish List</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+<section id="signup-page">
 
-<section id="signup">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xl-4 header-left d-flex flex-column justify-content-center align-items-center">
-                <div class="text">
-                    <h1>Registrierung</h1>
-                    <p>Hast du bereits einen Account? <a href="login.php">Login</a></p>
-                </div>
+<div class="navigation">
+<img src="img/logo.png" alt="">
+<h1 class="logo-title">Wishliist.</h1>
+
+
+<a class="login-button" href="index.php">Home</a>
+
+<a class="signup-button" href="login.php">Login</a>
+
+</div>
+
+<div class="text">
+    <h1>Registrierung</h1>
+    <p>Hast du bereits einen Account? <a href="login.php">Login</a></p>
+</div>
 
 <!--------------------------------------------- ERROR MELDUNGEN ----------------------------------------------->
                 <?php
@@ -44,23 +63,7 @@
                     <button class="button" type="submit" name=signup-submit>Signup</button>
                 </form>
             </div>
-            </div>
-            <div class="col-xl-8 header-right">
-                <img src="./img/friends.jpg" class="img-fluid header-image" alt="Responsive image">
-            </div>
-        </div>
-        <div class="image-title fixed-top p-3">
-            <img src="img/logofinal.png" class="img-fluid" style="height:180px;" alt="Logo" > 
-        </div>
-    </header>
-  </section>
 
 
-  <?php
-require "./includes/header.inc.php"
-?>
-
-
-<?php
-require "./includes/footer.inc.php"
-?>
+<div class="circle1"></div>
+<div class="circle2"></div>

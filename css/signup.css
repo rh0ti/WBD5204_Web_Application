@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Barlow|Cinzel|Julius+Sans+One|Poiret+One|Quicksand|Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 
 /* My CSS Reset */
 *{
@@ -12,92 +12,132 @@
 }
 
 body{
-    font-family: 'Quicksand', sans-serif;
-    /* background: black; */
+    height: 100vh;
+    width: 100vw;
+    background-color: #FCCC7F;
+    font-family: 'Varela Round', sans-serif;
+    color: white;
 }
 
 
-.text h1{
+.navigation{
+    height: 20vh;
+    display: flex;
+}
+
+.navigation img{
+    height: 55%;
+    margin: 10px;
+    position: relative;
+    right: -7%;
+}
+
+.navigation .logo-title{
     font-size: 60px;
-    color: #fff;
-    font-weight: 500;
+    position: relative;
+    right: -8%;
+    top: 22%;
 }
 
-
-.text p{
-    font-size: 20px;
-    color: #fff;
-    font-weight: 300;
-}
-
-.text p a{
-    color: #fff;
-    font-weight: 700;
-}
-
-.form{
-    background: transparent;
-    color: #fff;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    width: 250px;
-}
-
-input{
-    margin: 20px 0;
-    padding: 10px;
-    border: none;
-    outline: none;
-    color: black;
-    font-family: 'Quicksand', sans-serif;
-}
-
-.username, .password,.password2, .email{
-    border-bottom: 1px solid #fff;
-    
-}
-
-.button{
-    background: transparent;
-    border: 1px solid #fff;
-    color: #fff;
-    font-size: 19px;
-
-}
-
-.button:hover{
-    background: #fff;
-    color: #000;
-
-}
-
- .error{
-    color: red;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-
-}
-
-
-.success{
+.navigation .login-button {
     color: white;
-    background: green;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 25px;
+    border: 3px white solid;
+    border-radius: 50px;
+    height: 60px;
+    width: 150px;
+    position: relative;
+    right: -45%;
+    top: 15%;
+}
+
+.navigation .signup-button {
+    color: #707070;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 25px;
+    background-color: white;
+    border-radius: 50px;
+    height: 60px;
+    width: 200px;
+    position: relative;
+    right: -46%;
+    top: 15%;
+}
+
+a:hover, a:active {
+    background-color: red;
+  }
+  
+  
+h1{
+
+    font-size: 142px;
+    margin: 10px;
+    position: relative;
+    right: -7%;
+    top: -30px;
 
 }
 
-.info{
-    color: white;
-    background: green;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
+p{
+    font-size: 36px;
+    margin: 10px;
+    position: relative;
+    right: -7%;
+    top: -30px;
 
 }
+
+.create-button {
+    color: #707070;
+    padding: 30px 85px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 25px;
+    background-color: white;
+    border-radius: 50px;
+    height: 80px;
+    width: 280px;
+    position: relative;
+    right: -7%;
+    bottom: -40px;
+    z-index: 3;
+}
+
+.circle1{
+    height: 385px;
+    width: 770px;
+    background-color: white;
+    border-radius: 1540px 1540px 0px 0px ;
+    opacity: 0.3;
+    position: absolute;
+    bottom:-3%;
+    left: -2%;
+    z-index: 1;
+}
+
+.circle2{
+    height: 615px;
+    width: 1230px;
+    background-color: white;
+    border-radius: 2460px 2460px 0px 0px ;
+    opacity: 0.3;
+    position: absolute;
+    left: 30%;
+    bottom:-3%;
+    z-index: 2;
+}
+
+.gift-girl{
+    height: 65%;
+    position: absolute;
+    right: 10%;
+    top: 35%;
+    z-index: 3;
+}
+

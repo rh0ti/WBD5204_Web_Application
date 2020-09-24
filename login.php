@@ -9,7 +9,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Wish List</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
     
@@ -20,9 +20,9 @@ session_start();
 <h1 class="logo-title">Wishliist.</h1>
 
 
-<a class="login-button" href="#">Login</a>
+<a class="login-button" href="index.php">Home</a>
 
-<a class="signup-button" href="#">Get Started</a>
+<a class="signup-button" href="#">Sign Up</a>
 
 </div>
 
@@ -70,16 +70,6 @@ session_start();
  </section>
 
 
-
-
-
-
-
-
-
-
-
-
 <div class="circle1"></div>
 <div class="circle2"></div>
 
@@ -93,5 +83,8 @@ session_start();
 </html>
 
 </section>
+            
+            
+
             
             
