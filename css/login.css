@@ -14,7 +14,7 @@
 body{
     height: 100vh;
     width: 100vw;
-    background-color: #FCCC7F;
+    background-color: #A7E6E8;
     font-family: 'Varela Round', sans-serif;
     color: white;
 }
@@ -73,41 +73,32 @@ a:hover, a:active {
     background-color: red;
   }
   
+
+.form, .box, .info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+
+}
   
 h1{
-
     font-size: 142px;
     margin: 10px;
-    position: relative;
-    right: -7%;
-    top: -30px;
-
 }
 
 p{
     font-size: 36px;
     margin: 10px;
-    position: relative;
-    right: -7%;
-    top: -30px;
-
 }
 
-.create-button {
-    color: #707070;
-    padding: 30px 85px;
-    text-align: center;
+/* .box p a{
     text-decoration: none;
-    font-size: 25px;
-    background-color: white;
-    border-radius: 50px;
-    height: 80px;
-    width: 280px;
-    position: relative;
-    right: -7%;
-    bottom: -40px;
-    z-index: 3;
-}
+    color: white;
+} */
+
+
 
 .circle1{
     height: 385px;
@@ -133,11 +124,33 @@ p{
     z-index: 2;
 }
 
-.gift-girl{
-    height: 65%;
-    position: absolute;
-    right: 10%;
-    top: 35%;
-    z-index: 3;
+
+.username, .password{
+    color: #707070;
+    text-align: center;
+    text-decoration: none;
+    font-size: 25px;
+    background-color: white;
+    border-radius: 50px;
+    height: 80px;
+    width: 450px;
+    z-index: 5;
+    border: 3px white solid;
 }
 
+.button{
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    background-color: #707070;
+    font-size: 25px;
+    border-radius: 50px;
+    height: 70px;
+    width: 250px;
+    z-index: 5;
+    border: 3px #707070 solid;
+}
+
+.button:hover, .button:active {
+    background-color: red;
+  }

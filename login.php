@@ -19,15 +19,14 @@ session_start();
 <img src="img/logo.png" alt="">
 <h1 class="logo-title">Wishliist.</h1>
 
-
 <a class="login-button" href="index.php">Home</a>
 
-<a class="signup-button" href="#">Sign Up</a>
+<a class="signup-button" href="signup.php">Sign Up</a>
 
 </div>
 
 
-<div class="text2">
+<div class="box">
     <h1>Login</h1>
     <p>Noch kein Account? <a href="signup.php">Signup</a></p>
 </div>
@@ -60,13 +59,16 @@ session_start();
         ?>
 <!--------------------------------------------------- Login Formular --------------------------------------------------------->    
 
-        <div class="box2">
-            <form class="form" action="includes/login.inc.php" method="post">
-                <input class="username" type="text" name= "mailuid" placeholder="Username/E-Mail...">
-                <input class="password"type="password" name= "pwd" placeholder="Password">
-                <button class="button" type="submit" name="login-submit">Login</button>
-            </form>
-          </div>
+    <form class="form" action="includes/login.inc.php" method="post">
+        <input class="username" type="text" name= "mailuid" placeholder="Username/E-Mail..."> 
+        <br>
+        <input class="password"type="password" name= "pwd" placeholder="Password">
+        <br>
+        <button class="button" type="submit" name="login-submit">SUBMIT</button>
+    </form>
+
+
+
  </section>
 
 

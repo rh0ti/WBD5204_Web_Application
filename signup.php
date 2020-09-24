@@ -22,7 +22,7 @@
 
 </div>
 
-<div class="text">
+<div class="box">
     <h1>Registrierung</h1>
     <p>Hast du bereits einen Account? <a href="login.php">Login</a></p>
 </div>
@@ -54,15 +54,19 @@
                 }
             ?>
 <!--------------------------------------------- SIGNUP FORMULAR ----------------------------------------------->
-            <div class="box">
-                <form class="form" action="includes/signup.inc.php" method="post">
-                    <input class="username" type="text" name="uid" placeholder= "Username">
-                    <input class="email" type="text" name="mail" placeholder= "E-Mail">
-                    <input class="password" type="password" name="pwd" placeholder= "Password">
-                    <input class="password2" type="password" name="pwd-repeat" placeholder= "Repeat password">
-                    <button class="button" type="submit" name=signup-submit>Signup</button>
-                </form>
-            </div>
+
+        <form class="form" action="includes/signup.inc.php" method="post">
+            <input class="username" type="text" name="uid" placeholder= "Username">
+            <br>
+            <input class="email" type="text" name="mail" placeholder= "E-Mail">
+            <br>
+            <input class="password" type="password" name="pwd" placeholder= "Password">
+            <br>
+            <input class="password2" type="password" name="pwd-repeat" placeholder= "Repeat password">
+            <br>
+            <button class="button" type="submit" name=signup-submit>Signup</button>
+        </form>
+
 
 
 <div class="circle1"></div>
