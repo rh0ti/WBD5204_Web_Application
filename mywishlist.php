@@ -13,7 +13,7 @@
 
 <div class="navigation">
 <img src="img/logo.png" alt="">
-<h1 class="logo-title">Wishliist.</h1>
+<h1 class="logo-title">WISHLIIST.</h1>
 
 
 <a class="login-button" href="index.php">Home</a>
@@ -42,3 +42,6 @@
 
 <button>Drucken</button>
 <button>Teilen</button>
+
+<div class="circle1"></div>
+<div class="circle2"></div>

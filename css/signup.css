@@ -79,23 +79,22 @@ a:hover, a:active {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 10px;
-
 }
+
   
 h1{
-
     font-size: 142px;
     margin: 10px;
     position: relative;
-
+    top: -20px;
 }
 
 p{
     font-size: 36px;
     margin: 10px;
     position: relative;
-
+    top: -20px;
+    z-index: 5;
 }
 
 

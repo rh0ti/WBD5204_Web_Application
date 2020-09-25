@@ -13,7 +13,7 @@
 
 <div class="navigation">
 <img src="img/logo.png" alt="">
-<h1 class="logo-title">Wishliist.</h1>
+<h1 class="logo-title">WISHLIIST.</h1>
 
 
 <a class="login-button" href="index.php">Home</a>
@@ -24,7 +24,7 @@
 
 <div class="box">
     <h1>Registrierung</h1>
-    <p>Hast du bereits einen Account? <a href="login.php">Login</a></p>
+    <p>Hast du bereits einen Account? <a class="link-button" href="login.php">Login</a></p>
 </div>
 
 <!--------------------------------------------- ERROR MELDUNGEN ----------------------------------------------->

@@ -69,8 +69,12 @@ body{
     top: 15%;
 }
 
-a:hover, a:active {
+.login-button:hover, .login-button:active {
     background-color: red;
+  }
+
+  .link-button:hover, .link-button:active {
+    background-color: violet;
   }
   
 
@@ -86,17 +90,17 @@ a:hover, a:active {
 h1{
     font-size: 142px;
     margin: 10px;
+    position: relative;
+    top: -20px;
 }
 
 p{
     font-size: 36px;
     margin: 10px;
+    z-index: 5;
+    position: relative;
+    top: -20px;
 }
-
-/* .box p a{
-    text-decoration: none;
-    color: white;
-} */
 
 
 
