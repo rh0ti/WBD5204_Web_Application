@@ -6,19 +6,19 @@ if(isset($_POST['title'])){
     $title = $_POST['title'];
 
     if(empty($title)){
-        header("Location: ../profile.php?mess=error");
+        header("Location: ../mywishlist.php?mess=error");
     }else {
         $stmt = $conn->prepare("INSERT INTO wish(title) VALUE(?)");
         $res = $stmt->execute([$title]);
 
         if($res){
-            header("Location: ../profile.php?mess=success"); 
+            header("Location: ../mywishlist.php?mess=success"); 
         }else {
-            header("Location: ../profile.php");
+            header("Location: ../mywishlist.php");
         }
         $conn = null;
         exit();
     }
 }else {
-    header("Location: ../profile.php?mess=error");
+    header("Location: ../mywishlist.php?mess=error");
 }
