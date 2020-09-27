@@ -10,31 +10,24 @@ require 'includes/db.inc.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Wish List</title>
-    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/mywishlist.css">
 </head>
 <body>
-    
-<section id="home-page">
 
-<div class="navigation">
-<img src="img/logo.png" alt="">
-<h1 class="logo-title">WISHLIIST.</h1>
+    <div class="navigation">
+        <img src="img/logo.png" alt="">
+        <h1 class="logo-title">WISHLIIST.</h1>
+        <a class="login-button" href="discover.php">Discover</a>
+        <a class="login-button" href="#">Wishlist</a>
+        <a class="login-button" href="profile.php">Profil</a>
+        <a class="signup-button" href="#">Sign out</a>
+    </div>
 
-<a class="login-button" href="discover.php">Discover</a>
-
-<a class="login-button" href="#">Wishlist</a>
-
-<a class="login-button" href="profile.php">Profil</a>
-
-<a class="signup-button" href="#">Sign out</a>
-
-</div>
-
-
-
-
-<body>
     <div class="main-section">
+        <div class="container-title">
+            <h1>Add your Wish</h1>
+            <p>Erstelle hier deine Wishlist.</p>
+        </div>
        <div class="add-section">
           <form action="app/add.php" method="POST" autocomplete="off">
              <?php if(isset($_GET['mess']) && $_GET['mess'] == 'error'){ ?>
@@ -87,6 +80,9 @@ require 'includes/db.inc.php';
             <?php } ?>
        </div>
     </div>
+
+    <div class="circle1"></div>
+    <div class="circle2"></div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
