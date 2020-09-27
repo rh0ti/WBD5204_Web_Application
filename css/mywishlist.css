@@ -20,6 +20,8 @@ body{
 }
 
 
+/* ------------------------------------------ Navigation ------------------------------------------ */
+
 .navigation{
     height: 20vh;
     display: flex;
@@ -50,8 +52,9 @@ body{
     height: 60px;
     width: 150px;
     position: relative;
-    right: -45%;
-    top: 15%;
+    right: -30%;
+    top: 20%;
+    margin: 10px;
 }
 
 .navigation .signup-button {
@@ -65,8 +68,8 @@ body{
     height: 60px;
     width: 200px;
     position: relative;
-    right: -46%;
-    top: 15%;
+    right: -30.5%;
+    top: 25%;
 }
 
 a:hover, a:active {
