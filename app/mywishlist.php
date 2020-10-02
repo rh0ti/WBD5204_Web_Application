@@ -19,7 +19,7 @@ require 'includes/db.inc.php';
         <a class="login-button" href="discover.php">Discover</a>
         <a class="login-button" href="#">Wishlist</a>
         <a class="login-button" href="profile.php">Profil</a>
-        <a class="signup-button" href="#">Sign out</a>
+        <a class="signup-button" href="#">Log out</a>
     </div>
 
     <div class="main-section">
