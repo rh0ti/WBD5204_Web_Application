@@ -1,7 +1,7 @@
 <?php
 
 if(isset($_POST['title'])){
-    require '../includes/db.inc.php';
+    require '../classes/dbh.class.php';
 
     $title = $_POST['title'];
 

@@ -1,5 +1,5 @@
 <?php 
-require 'includes/db.inc.php';
+require 'classes/dbh.class.php';
 ?>
 
 <!DOCTYPE html>
@@ -9,7 +9,7 @@ require 'includes/db.inc.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Wish List</title>
-    <link rel="stylesheet" href="css/mywishlist.css">
+    <link rel="stylesheet" href="public/css/mywishlist.css">
 </head>
 <body>
 
@@ -90,7 +90,7 @@ require 'includes/db.inc.php';
             $('.remove-wish').click(function(){
                 const id = $(this).attr('id');
                 
-                $.post("app/remove.php", 
+                $.post("remove.php", 
                       {
                           id: id
                       },
@@ -105,7 +105,7 @@ require 'includes/db.inc.php';
             $(".check-box").click(function(e){
                 const id = $(this).attr('data-wish-id');
                 
-                $.post('app/check.php', 
+                $.post('check.php', 
                       {
                           id: id
                       },

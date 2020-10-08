@@ -6,7 +6,7 @@ session_start();
 if(isset($_POST['login-submit'])){
 
     //Connection to Database
-    require 'dbh.inc.php';
+    require '../classes/dbh.class.php';
 
 
     //Eingabe von User einholen

@@ -1,7 +1,7 @@
 <?php
 if(isset($_POST["signup-submit"])){
 
-    require 'dbh.inc.php';
+    require '../classes/dbh.class.php';
 
     $username = $_POST['uid'];
     $email = $_POST['mail'];

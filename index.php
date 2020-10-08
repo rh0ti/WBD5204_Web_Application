@@ -1,3 +1,9 @@
+<?php
+
+include "includes/autoloader.inc.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,10 +11,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="public/css/home.css">
     <title>Wish List</title>
 </head>
 <body>
+
+<?php
+
+$usersObj1 = new UsersView();
+$usersObj1->showUser("Daniel");
+
+$usersObj2 = new UsersContr();
+$usersObj2->createUser('Jane', "joe@hhd.com", "12323");
+
+?>
     
 <section id="home-page">
 
@@ -26,7 +42,7 @@
 
 <a class="create-button" href="signup.php">Create your free profile >></a>
 
-<img class="gift-girl" src="img/girl.png" alt="Girl with Gift">
+<img class="gift-girl" src="public/img/girl.png" alt="Girl with Gift">
 
 <div class="circle1"></div>
 <div class="circle2"></div>
