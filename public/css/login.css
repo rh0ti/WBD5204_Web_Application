@@ -104,13 +104,16 @@ p{
 
 
 
-.circle1{
+ /* ------------------------------------------ Background Circle ------------------------------------------ */ 
+
+
+ .circle1{
     height: 385px;
     width: 770px;
     background-color: white;
     border-radius: 1540px 1540px 0px 0px ;
     opacity: 0.3;
-    position: absolute;
+    position: fixed;
     bottom:-3%;
     left: -2%;
     z-index: 1;
@@ -122,11 +125,12 @@ p{
     background-color: white;
     border-radius: 2460px 2460px 0px 0px ;
     opacity: 0.3;
-    position: absolute;
+    position: fixed;
     left: 30%;
     bottom:-3%;
     z-index: 2;
 }
+
 
 
 .username, .password{
