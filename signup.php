@@ -47,7 +47,7 @@ if(isset($_POST['signup'])){
   if(empty($data['name_error']) && empty($data['email_error']) && empty($data['password_error']) && empty($data['confirm_error'])){
     $password = password_hash($data['password'], PASSWORD_DEFAULT);
     if($source->Query("INSERT INTO users (name,email,password) VALUES (?,?,?)", [$data['name'], $data['email'], $password])){
-      $_SESSION['account_created'] = "Du hast die erfolgreich registriert! Log dich ein.";
+      $_SESSION['account_created'] = "Du hast dich erfolgreich registriert! Log dich ein.";
       header("location:login.php");
     }
   }
