@@ -1,10 +1,7 @@
-<?php
-session_start();
-?>
-
-<?php
-include "includes/autoloader.inc.php";
-?>
+<?php include "init.php";?>
+<?php if(isset($_SESSION['id'])): ?>
+  <?php header("location:profile.php"); ?>
+<?php endif; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -37,40 +34,34 @@ include "includes/autoloader.inc.php";
     <p>Noch kein Account? <a href="signup.php">Signup</a></p>
 </div>
 
- <!--------------------------------------------- PHP - Meldung beim Einlogen ----------------------------------------------->      
-<?php
-    if(isset($_SESSION['userId'])){
-        echo '<p class="info" > Du hast dich erfolgreich eingeloggt!</p>';
-    }
-    else{
-        echo '<p class="info" >Log dich ein!</p>';
-    }
-?>
-<!--------------------------- PHP - ERROR Meldung, wenn etwas nicht korrekt ausgefüllt ist! ------------------------------->
-        <?php
-            if(isset($_GET['error'])){
-                if($_GET['error'] == "emptyfields"){
-                    echo '<p class="error2">Bitte alle Felder ausfüllen!</p>';
-                }
-                else if($_GET['error'] == "sqlerror"){
-                    echo '<p class="error2">Die Angaben sind falsch!</p>';
-                }
-                else if($_GET['error'] == "wrongpwd"){
-                    echo '<p class="error2">Passwort ist falsch!</p>';
-                }  
-                else if($_GET['error'] == "nouser"){
-                    echo '<p class="error2">Username nicht vorhanden!</p>';
-                }
-            }
-        ?>
+
 <!--------------------------------------------------- Login Formular --------------------------------------------------------->    
 
-    <form class="form" action="includes/login.inc.php" method="post">
-        <input class="username" type="text" name= "mailuid" placeholder="Username/E-Mail..."> 
+    <form action="includes/login.inc.php" method="POST">
+
+        <?php 
+            if(isset($_SESSION['account_created'])):?>
+            <div class="success">
+                <?php echo $_SESSION['account_created']; ?>
+            </div>
+            <?php endif; ?>
+        <?php unset($_SESSION['account_created']); ?>
+
+        <input type="email" name="email" class="username" placeholder="Enter Email" value="<?php if(!empty($data['email'])): echo $data['email']; endif; ?>">
+        <div class="error">
+            <?php if(!empty($data['email_error'])): ?>
+            <?php echo $data['email_error']; ?>
+            <?php endif; ?>
+        </div>
         <br>
-        <input class="password"type="password" name= "pwd" placeholder="Password">
+        <input type="password" name="password" class="password" placeholder="Enter Password" value="<?php if(!empty($data['password'])): echo $data['password']; endif; ?>">
+        <div class="error">
+            <?php if(!empty($data['password_error'])): ?>
+            <?php echo $data['password_error']; ?>
+            <?php endif; ?>
+        </div>
         <br>
-        <button class="button" type="submit" name="login-submit">SUBMIT</button>
+        <input type="submit" name="login" class="button" value="Login">
     </form>
 
 

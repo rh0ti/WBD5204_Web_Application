@@ -1,5 +1,6 @@
+<?php include "init.php";?>
+
 <?php
-include "includes/autoloader.inc.php";
 include "includes/navigation.inc.php";
 ?>
 
@@ -17,11 +18,21 @@ include "includes/navigation.inc.php";
 <section id="profile-page">
 
 <div class="container-title">
+        <h2>W E L C O M E</h2>
         <h1>Jordi</h1>
         <div class="profile-picture"></div>
         <p>Deine Liste.</p>
-</div>
-    
+
+
+
+    <?php if(isset($_SESSION['login_success'])): ?>
+      <div class="success">
+        <?php echo $_SESSION['login_success']; ?>
+      </div>
+    <?php endif;?>
+    <?php unset($_SESSION['login_success']); ?><br>
+
+</div>  
 
 <div class="container-button">
 

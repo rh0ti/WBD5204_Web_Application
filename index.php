@@ -1,5 +1,8 @@
 <?php
-include "includes/autoloader.inc.php";
+include "init.php";
+if(isset($_SESSION['id'])){
+  header("location:profile.php");
+}
 ?>
 
 <!DOCTYPE html>
@@ -13,16 +16,6 @@ include "includes/autoloader.inc.php";
     <title>PHP Projekt</title>
 </head>
 
-
-<?php
-
-$usersObj1 = new UsersView();
-$usersObj1->showUser("Daniel");
-
-$usersObj2 = new UsersContr();
-$usersObj2->createUser('Jane', "joe@hhd.com", "12323");
-
-?>
     
 <section id="home-page">
 

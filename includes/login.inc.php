@@ -1,63 +1,44 @@
+<?php include "../init.php";?>
+<?php if(isset($_SESSION['id'])): ?>
+  <?php header("location:../profile.php"); ?>
+<?php endif; ?>
 <?php
-session_start();
+if(isset($_POST['login'])){
+  $data = [
+    'email' => $_POST['email'],
+    'password' => $_POST['password'],
+    'email_error' => '',
+    'password_error' => ''
+  ];
 
+  if (empty($data['email'])){
+    $data['email_error'] = "Email is required";
+  }
 
-//wenn submit gedrückt wird
-if(isset($_POST['login-submit'])){
+  if(empty($data['password'])){
+    $data['password_error'] = "Password is required";
+  }
 
-    //Connection to Database
-    require '../classes/dbh.class.php';
+  if(empty($data['email_error']) && empty($data['password_error'])){
+    if($source->Query("SELECT * FROM users WHERE email = ?", [$data['email']])){
+      if($source->CountRows() > 0){
+        $row = $source->Single();
+        $id = $row->id;
+        $db_password = $row->password;
+        $name = $row->name;
+        if(password_verify($data['password'], $db_password)){
 
-
-    //Eingabe von User einholen
-    $mailuid = $_POST['mailuid'];
-    $password = $_POST['pwd'];
-
-    //Ist etwas leer?
-    if(empty($mailuid) || empty($password)){
-        header("Location: ../login.php?error=emptyfields");
-        exit();
-    }
-    else{//gibt es ein Match im Databank?
-        $sql = "SELECT * FROM users WHERE uidUsers=? OR emailUsers=?;";
-        $stmt = mysqli_stmt_init($conn);
-        if(!mysqli_stmt_prepare($stmt, $sql)){
-            header("Location: ../login.php?error=sqlerror");
-            exit();
+          $_SESSION['login_success'] = "Hi ".$name . " You logged in successfully";
+          $_SESSION['id'] = $id;
+          header("location:../profile.php");
+        } else {
+          $data['password_error'] = "Please enter correct password";
         }
-    else{
-        //pass the info
-        mysqli_stmt_bind_param($stmt,"ss", $mailuid, $mailuid);
-        //result von database
-        mysqli_stmt_execute($stmt);
-        $result = mysqli_stmt_get_result($stmt);
-        if($row = mysqli_fetch_assoc($result)){
-            $pwdCheck = password_verify($password, $row['pwdUsers']);
-            if ($pwdCheck == false){
-                header("Location: ../login.php?error=wrongpwd");
-                exit();
-            }
-            else if ($pwdCheck == true){
-                $_SESSION['userId'] = $row['pwdUsers'];
-                $_SESSION['userUid'] = $row['uidUsers'];
-
-                header("Location: ../geheim.php?login=success");
-                exit();
-
-            }
-            else{
-                header("Location: ../login.php?error=wrongpwd");
-                exit();
-            }
-        }
-        else{
-            header("Location: ../login.php?error=nouser");
-            exit();
-        }
+      } else {
+        $data['email_error'] = "Please enter correct email";
+      }
     }
-    }
+  }
+
 }
-else{
-    header("Location: ../login.php");
-    exit();
-}
+?>

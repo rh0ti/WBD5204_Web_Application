@@ -7,6 +7,6 @@
         <a class="login-button" href="discover.php">Discover</a>
         <a class="login-button" href="mywishlist.php">Wishlist</a>
         <a class="login-button" href="profile.php">Profil</a>
-        <a class="signup-button" href="#">Sign out</a>
+        <a class="signup-button" href="includes/logout.inc.php">Sign out</a>
     </div>
 </body>

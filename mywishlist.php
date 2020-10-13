@@ -1,5 +1,5 @@
 <?php 
-require 'classes/dbh.class.php';
+require 'classes/db.class.php';
 include "includes/autoloader.inc.php";
 include "includes/navigation.inc.php";
 ?>
