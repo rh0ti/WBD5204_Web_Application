@@ -20,7 +20,7 @@ if(isset($_SESSION['id'])){
 <section id="home-page">
 
 <div class="navigation">
-<img src="img/logo.png" alt="">
+<img src="public/img/logo.png" alt="">
 <h1 class="logo-title">WISHLIIST.</h1>
 
 <a class="login-button" href="login.php">Login</a>

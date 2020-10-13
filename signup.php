@@ -47,7 +47,7 @@ if(isset($_POST['signup'])){
   if(empty($data['name_error']) && empty($data['email_error']) && empty($data['password_error']) && empty($data['confirm_error'])){
     $password = password_hash($data['password'], PASSWORD_DEFAULT);
     if($source->Query("INSERT INTO users (name,email,password) VALUES (?,?,?)", [$data['name'], $data['email'], $password])){
-      $_SESSION['account_created'] = "You have successfully signed in";
+      $_SESSION['account_created'] = "Du hast die erfolgreich registriert! Log dich ein.";
       header("location:login.php");
     }
   }
@@ -70,7 +70,7 @@ if(isset($_POST['signup'])){
 <section id="signup-page">
 
 <div class="navigation">
-<img src="img/logo.png" alt="">
+<img src="public/img/logo.png" alt="">
 <h1 class="logo-title">WISHLIIST.</h1>
 
 
@@ -89,7 +89,7 @@ if(isset($_POST['signup'])){
 <!--------------------------------------------- SIGNUP FORMULAR ----------------------------------------------->
 
         <form class="form" action="" method="post">
-        <input type="text" name="uid" class="username" placeholder="Enter Name" value="<?php if(!empty($data['name'])): echo $data['name']; endif; ?>">
+            <input type="text" name="uid" class="username" placeholder="Enter Name" value="<?php if(!empty($data['name'])): echo $data['name']; endif; ?>">
             <div class="error">
                 <?php if(!empty($data['name_error'])): ?>
                     <?php echo $data['name_error']; ?>

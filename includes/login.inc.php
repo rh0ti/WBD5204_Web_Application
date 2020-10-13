@@ -1,7 +1,3 @@
-<?php include "../init.php";?>
-<?php if(isset($_SESSION['id'])): ?>
-  <?php header("location:../profile.php"); ?>
-<?php endif; ?>
 <?php
 if(isset($_POST['login'])){
   $data = [

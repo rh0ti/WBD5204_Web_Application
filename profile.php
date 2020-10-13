@@ -23,8 +23,6 @@ include "includes/navigation.inc.php";
         <div class="profile-picture"></div>
         <p>Deine Liste.</p>
 
-
-
     <?php if(isset($_SESSION['login_success'])): ?>
       <div class="success">
         <?php echo $_SESSION['login_success']; ?>

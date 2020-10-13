@@ -1,7 +1,7 @@
 <?php
 
 if(isset($_POST['id'])){
-    require '../classes/dbh.class.php';
+    require 'classes/db.class.php';
 
     $id = $_POST['id'];
 
@@ -28,5 +28,5 @@ if(isset($_POST['id'])){
         exit();
     }
 }else {
-    header("Location: ../mywishlist.php?mess=error");
+    header("Location: mywishlist.php?mess=error");
 }

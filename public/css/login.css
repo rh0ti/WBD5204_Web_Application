@@ -19,7 +19,7 @@ body{
     color: white;
 }
 
-
+/* ------------------------------------------ Navigation ------------------------------------------ */
 .navigation{
     height: 20vh;
     display: flex;
@@ -69,16 +69,11 @@ body{
     top: 15%;
 }
 
-.login-button:hover, .login-button:active {
-    background-color: red;
-  }
 
-  .link-button:hover, .link-button:active {
-    background-color: violet;
-  }
-  
+/* ------------------------------------------ Formular ------------------------------------------ */
 
-.form, .box, .info{
+
+.login-form, .box, .info{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -101,36 +96,6 @@ p{
     position: relative;
     top: -20px;
 }
-
-
-
- /* ------------------------------------------ Background Circle ------------------------------------------ */ 
-
-
- .circle1{
-    height: 385px;
-    width: 770px;
-    background-color: white;
-    border-radius: 1540px 1540px 0px 0px ;
-    opacity: 0.3;
-    position: fixed;
-    bottom:-3%;
-    left: -2%;
-    z-index: 1;
-}
-
-.circle2{
-    height: 615px;
-    width: 1230px;
-    background-color: white;
-    border-radius: 2460px 2460px 0px 0px ;
-    opacity: 0.3;
-    position: fixed;
-    left: 30%;
-    bottom:-3%;
-    z-index: 2;
-}
-
 
 
 .username, .password{
@@ -162,3 +127,38 @@ p{
 .button:hover, .button:active {
     background-color: red;
   }
+
+.login-button:hover, .login-button:active {
+    background-color: red;
+}
+
+.link-button:hover, .link-button:active {
+    background-color: violet;
+}
+
+   /* ------------------------------------------ Background Circle ------------------------------------------ */ 
+
+
+ .circle1{
+    height: 385px;
+    width: 770px;
+    background-color: white;
+    border-radius: 1540px 1540px 0px 0px ;
+    opacity: 0.3;
+    position: fixed;
+    bottom:-3%;
+    left: -2%;
+    z-index: 1;
+}
+
+.circle2{
+    height: 615px;
+    width: 1230px;
+    background-color: white;
+    border-radius: 2460px 2460px 0px 0px ;
+    opacity: 0.3;
+    position: fixed;
+    left: 30%;
+    bottom:-3%;
+    z-index: 2;
+}

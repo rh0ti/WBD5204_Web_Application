@@ -1,24 +1,24 @@
 <?php
 
 if(isset($_POST['title'])){
-    require '../classes/dbh.class.php';
+    require 'classes/db.class.php';
 
     $title = $_POST['title'];
 
     if(empty($title)){
-        header("Location: ../mywishlist.php?mess=error");
+        header("Location: mywishlist.php?mess=error");
     }else {
         $stmt = $conn->prepare("INSERT INTO wish(title) VALUE(?)");
         $res = $stmt->execute([$title]);
 
         if($res){
-            header("Location: ../mywishlist.php?mess=success"); 
+            header("Location: mywishlist.php?mess=success"); 
         }else {
-            header("Location: ../mywishlist.php");
+            header("Location: mywishlist.php");
         }
         $conn = null;
         exit();
     }
 }else {
-    header("Location: ../mywishlist.php?mess=error");
+    header("Location:mywishlist.php?mess=error");
 }

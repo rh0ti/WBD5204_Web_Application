@@ -1,5 +1,4 @@
 <?php
-include "includes/autoloader.inc.php";
 include "includes/navigation.inc.php";
 ?>
 
