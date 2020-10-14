@@ -19,6 +19,7 @@ include "includes/navigation.inc.php";
 <div class="container-title">
     <h1>Discover</h1>
     <p>Suche deine Freunde und durchstöbere Ihre Wishliist.</p>
+
     <input class="search-field" placeholder="Discover Profiles">
 </div>
 
