@@ -1,14 +1,14 @@
 <?php
 
 if(isset($_POST['id'])){
-    require 'classes/db.class.php';
+    require '../classes/db_conn.php';
 
     $id = $_POST['id'];
 
     if(empty($id)){
        echo 'error';
     }else {
-        $todos = $conn->prepare("SELECT id, checked FROM wish WHERE id=?");
+        $todos = $conn->prepare("SELECT id, checked FROM todos WHERE id=?");
         $todos->execute([$id]);
 
         $todo = $todos->fetch();
@@ -17,7 +17,7 @@ if(isset($_POST['id'])){
 
         $uChecked = $checked ? 0 : 1;
 
-        $res = $conn->query("UPDATE wish SET checked=$uChecked WHERE id=$uId");
+        $res = $conn->query("UPDATE todos SET checked=$uChecked WHERE id=$uId");
 
         if($res){
             echo $checked;
@@ -28,5 +28,5 @@ if(isset($_POST['id'])){
         exit();
     }
 }else {
-    header("Location: mywishlist.php?mess=error");
+    header("Location: ../mywishlist.php?mess=error");
 }
