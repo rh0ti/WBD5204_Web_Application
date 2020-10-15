@@ -1,6 +1,10 @@
 <?php include "init.php";?>
 
 <?php
+$conn = mysqli_connect("localhost", "root", "root", "wish_list");
+?>
+
+<?php
 include "includes/navigation.inc.php";
 ?>
 
