@@ -22,6 +22,12 @@ if(isset($_POST['login'])){
     $data['password_error'] = "Password is required";
   }
 
+  $_SESSION['profile'] = " " .$name . " ";
+  $_SESSION['id'] = $id;
+
+
+
+
   if(empty($data['email_error']) && empty($data['password_error'])){
     if($source->Query("SELECT * FROM users WHERE email = ?", [$data['email']])){
       if($source->CountRows() > 0){
@@ -31,6 +37,7 @@ if(isset($_POST['login'])){
         $name = $row->name;
         if(password_verify($data['password'], $db_password)){
 
+          $_SESSION['profile'] = " " .$name . " ";
           $_SESSION['login_success'] = "Hi ".$name . " You logged in successfully";
           $_SESSION['id'] = $id;
           header("location:profile.php");

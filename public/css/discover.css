@@ -149,7 +149,7 @@ p{
     height: 150px;
     width: 150px;
     border-radius: 50%;
-    background-color: #fff;
+    background-color: rgb(233, 166, 233);
     z-index: 6;
     
 }
@@ -162,12 +162,12 @@ p{
     text-align: center;
     text-decoration: none;
     font-size: 25px;
-    background-color: white;
+    background-color: #fff;
     border-radius: 20px;
     height: 80px;
     width: 650px;
     z-index: 5;
-    border: 3px white solid;
+    border: 3px #fff solid;
     position: relative;
     top: -20px;
     margin: 50px;

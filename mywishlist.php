@@ -6,8 +6,7 @@ include "includes/init.inc.php";
 
 <!--------------------------------------------- WISHLIST HTML ----------------------------------------------->
 
-<!-- WISHLIST CSS -->
-<link rel="stylesheet" href="public/css/mywishlist.css">
+
 
 <div class="container-title">
     <h1>Add your Wish</h1>
@@ -19,8 +18,6 @@ include "includes/init.inc.php";
             </div>
             <?php endif;?>
         <?php unset($_SESSION['login_success']); ?><br>
-
-
 
 </div>
 <div class="main-section">
@@ -75,8 +72,11 @@ include "includes/init.inc.php";
        </div>
     </div>
 
-    <!-- <div class="circle1"></div>
-    <div class="circle2"></div> -->
+    <!-- <div class="circle1"></div> -->
+    <!-- <div class="circle2"></div> -->
+
+    <!-- WISHLIST CSS -->
+    <link rel="stylesheet" href="public/css/mywishlist.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 </body>

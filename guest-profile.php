@@ -15,7 +15,7 @@ include "includes/navigation.inc.php";
         <h2>W I S H L I S T</h2>
         <h1>Marco</h1>
 
-        <div class="profile-picture"></div>
+        <img class="profile-picture" src="public/img/cat2.jpg" alt="">
 
         <?php if(isset($_SESSION['login_success'])): ?>
             <div class="success">
@@ -27,22 +27,22 @@ include "includes/navigation.inc.php";
 
     <div class="container-item">
         <div class="item">    
-            <p>Kamera</p>
+            <p>Camera</p>
+        </div>
+        <div class="item">    
+            <p>Book</p>
+        </div>
+        <div class="item">    
+            <p>Iphone</p>
         </div>
         <div class="item">    
             <p>Kamera</p>
         </div>
         <div class="item">    
-            <p>Kamera</p>
+            <p>Laptop</p>
         </div>
         <div class="item">    
-            <p>Kamera</p>
-        </div>
-        <div class="item">    
-            <p>Kamera</p>
-        </div>
-        <div class="item">    
-            <p>Kamera</p>
+            <p>TV</p>
         </div>
     </div>
 </section>

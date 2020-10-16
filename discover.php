@@ -11,7 +11,7 @@ include "includes/navigation.inc.php";
 	<div class="container-title">
 		<h1>Discover</h1>
 		<p>Suche deine Freunde und durchstöbere Ihre Wishliist.</p>
-		<input class="search-field"  type="text" name="search_text" id="search_text" placeholder="Discover Profiles" />
+		<input class="search-field"  type="text" name="search_text" id="search_text" placeholder="Search for a name" />
 	</div>
 	<div id="result"></div>
 </section>

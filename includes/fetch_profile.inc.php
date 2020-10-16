@@ -10,14 +10,6 @@ $conn = mysqli_connect("localhost", "root", "root", "wish_list");
 		{
 			$search = mysqli_real_escape_string($conn, $_POST["query"]);
 			$query = "
-			SELECT * FROM users 
-			WHERE name LIKE '%".$search."%'
-			OR email LIKE '%".$search."%' 
-			";
-		}
-		else
-		{
-			$query = "
 			SELECT * FROM users ORDER BY user_id";
 		}
 		$result = mysqli_query($conn, $query);
@@ -39,6 +31,6 @@ $conn = mysqli_connect("localhost", "root", "root", "wish_list");
 		}
 		else
 		{
-			echo 'Data Not Found';
+			echo 'No wish yet!';
 		}
 ?>
