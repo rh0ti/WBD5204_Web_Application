@@ -18,7 +18,7 @@ $conn = mysqli_connect("localhost", "root", "root", "wish_list");
 		else
 		{
 			$query = "
-			SELECT * FROM users ORDER BY id";
+			SELECT * FROM users ORDER BY user_id";
 		}
 		$result = mysqli_query($conn, $query);
 		if(mysqli_num_rows($result) > 0)
@@ -30,7 +30,7 @@ $conn = mysqli_connect("localhost", "root", "root", "wish_list");
 
 				<div style="width:550px; ">
 					<div class="profile-pic" style="float:left; margin:15px; display:flex; justify-content:center; position:relative; " >
-					<a href="#" style="color:#707070;">'.$row["name"].'</a></div>
+					<a href="guest-profile.php" style="color:#707070;">'.$row["name"].'</a></div>
 				</div>
 
 				';

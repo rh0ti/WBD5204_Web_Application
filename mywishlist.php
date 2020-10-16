@@ -12,6 +12,16 @@ include "includes/init.inc.php";
 <div class="container-title">
     <h1>Add your Wish</h1>
     <p>Erstelle hier deine Wishlist.</p>
+
+    <?php if(isset($_SESSION['login_success'])): ?>
+            <div class="success">
+            <?php echo $_SESSION['login_success']; ?>
+            </div>
+            <?php endif;?>
+        <?php unset($_SESSION['login_success']); ?><br>
+
+
+
 </div>
 <div class="main-section">
        <div class="add-section">
@@ -31,7 +41,7 @@ include "includes/init.inc.php";
           </form>
        </div>
        <?php 
-          $wishes = $conn->query("SELECT * FROM whishes ORDER BY id DESC");
+          $wishes = $conn->query("SELECT * FROM wishes ORDER BY id DESC");
        ?>
        <div class="show-wish-section">
             <?php if($wishes->rowCount() <= 0){ ?>

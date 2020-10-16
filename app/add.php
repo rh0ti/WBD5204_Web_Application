@@ -8,7 +8,7 @@ if(isset($_POST['title'])){
     if(empty($title)){
         header("Location: ../mywishlist.php?mess=error");
     }else {
-        $stmt = $conn->prepare("INSERT INTO whishes(title) VALUE(?)");
+        $stmt = $conn->prepare("INSERT INTO wishes(title) VALUE(?)");
         $res = $stmt->execute([$title]);
 
         if($res){
@@ -16,7 +16,7 @@ if(isset($_POST['title'])){
         }else {
             header("Location: ../mywishlist.php");
         }
-        $conn = null;
+         $conn = null;
         exit();
     }
 }else {

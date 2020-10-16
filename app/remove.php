@@ -8,7 +8,7 @@ if(isset($_POST['id'])){
     if(empty($id)){
        echo 0;
     }else {
-        $stmt = $conn->prepare("DELETE FROM whishes WHERE id=?");
+        $stmt = $conn->prepare("DELETE FROM wishes WHERE id=?");
         $res = $stmt->execute([$id]);
 
         if($res){

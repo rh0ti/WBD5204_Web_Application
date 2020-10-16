@@ -13,7 +13,8 @@ include "includes/navigation.inc.php";
 <section id="profile-page">
     <div class="container-title">
         <h2>W E L C O M E</h2>
-        <h1>Jordi</h1>
+        <h1>Bitch</h1>
+
         <div class="profile-picture"></div>
         <p>Deine Liste.</p>
 
