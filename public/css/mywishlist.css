@@ -172,7 +172,7 @@ p{
   height: 35px;
 }
 
-.show-todo-section {
+.show-wish-section {
   width: 100%;
   background: #fff;
   margin: 30px auto;
@@ -180,7 +180,7 @@ p{
   border-radius: 5px;
 }
 
-.todo-item {
+.wish-item {
   width: 95%;
   margin: 10px auto;
   padding: 20px 10px;
@@ -188,7 +188,7 @@ p{
   border-radius: 5px;
 }
 
-.todo-item h2 {
+.wish-item h2 {
   display: inline-block;
   padding: 5px 0px;
   font-size: 17px;
@@ -196,7 +196,7 @@ p{
   color: #555;
 }
 
-.todo-item small {
+.wish-item small {
   display: block;
   width: 100%;
   padding: 5px 0px;
@@ -206,7 +206,7 @@ p{
   font-family: sans-serif;
 }
 
-.remove-to-do {
+.remove-wish {
   display: block;
   float: right;
   width: 20px;
@@ -221,7 +221,7 @@ p{
   cursor: pointer;
 }
 
-.remove-to-do:hover {
+.remove-wish:hover {
   background: rgb(139, 97, 93);
   color: #fff;
 }
@@ -231,7 +231,7 @@ p{
   text-decoration: line-through;
 }
 
-.todo-item input {
+.wish-item input {
   margin: 0px 5px;
 }
 

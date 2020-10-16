@@ -8,7 +8,7 @@ if(isset($_POST['id'])){
     if(empty($id)){
        echo 'error';
     }else {
-        $todos = $conn->prepare("SELECT id, checked FROM todos WHERE id=?");
+        $todos = $conn->prepare("SELECT id, checked FROM whishes WHERE id=?");
         $todos->execute([$id]);
 
         $todo = $todos->fetch();
@@ -17,7 +17,7 @@ if(isset($_POST['id'])){
 
         $uChecked = $checked ? 0 : 1;
 
-        $res = $conn->query("UPDATE todos SET checked=$uChecked WHERE id=$uId");
+        $res = $conn->query("UPDATE whishes SET checked=$uChecked WHERE id=$uId");
 
         if($res){
             echo $checked;

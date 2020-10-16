@@ -3,9 +3,6 @@ include "includes/init.inc.php";
 include "includes/navigation.inc.php";
 ?>
 
-<?php
-$conn = mysqli_connect("localhost", "root", "root", "wish_list");
-?>
 
 <!--------------------------------------------- PROFILE HTML ----------------------------------------------->
 

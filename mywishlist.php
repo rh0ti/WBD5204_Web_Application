@@ -25,41 +25,41 @@ include "includes/init.inc.php";
              <?php }else{ ?>
               <input type="text" 
                      name="title" 
-                     placeholder="What do you need to do?" />
+                     placeholder="Type in your wish." />
               <button type="submit">Add &nbsp; <span>&#43;</span></button>
              <?php } ?>
           </form>
        </div>
        <?php 
-          $todos = $conn->query("SELECT * FROM todos ORDER BY id DESC");
+          $wishes = $conn->query("SELECT * FROM whishes ORDER BY id DESC");
        ?>
-       <div class="show-todo-section">
-            <?php if($todos->rowCount() <= 0){ ?>
-                <div class="todo-item">
+       <div class="show-wish-section">
+            <?php if($wishes->rowCount() <= 0){ ?>
+                <div class="wish-item">
                     <div class="empty">
                         <img src="public/img/tenor.gif" width="60%" />
                         <h3>Make a wish.</h3>
                     </div>
                 </div>
             <?php } ?>
-            <?php while($todo = $todos->fetch(PDO::FETCH_ASSOC)) { ?>
-                <div class="todo-item">
-                    <span id="<?php echo $todo['id']; ?>"
-                          class="remove-to-do">x</span>
-                    <?php if($todo['checked']){ ?> 
+            <?php while($wish = $wishes->fetch(PDO::FETCH_ASSOC)) { ?>
+                <div class="wish-item">
+                    <span id="<?php echo $wish['id']; ?>"
+                          class="remove-wish">x</span>
+                    <?php if($wish['checked']){ ?> 
                         <input type="checkbox"
                                class="check-box"
-                               data-todo-id ="<?php echo $todo['id']; ?>"
+                               data-wish-id ="<?php echo $wish['id']; ?>"
                                checked />
-                        <h2 class="checked"><?php echo $todo['title'] ?></h2>
+                        <h2 class="checked"><?php echo $wish['title'] ?></h2>
                     <?php }else { ?>
                         <input type="checkbox"
-                               data-todo-id ="<?php echo $todo['id']; ?>"
+                               data-wish-id ="<?php echo $wish['id']; ?>"
                                class="check-box" />
-                        <h2><?php echo $todo['title'] ?></h2>
+                        <h2><?php echo $wish['title'] ?></h2>
                     <?php } ?>
                     <br>
-                    <small>created: <?php echo $todo['date_time'] ?></small> 
+                    <small>created: <?php echo $wish['date_time'] ?></small> 
                 </div>
             <?php } ?>
        </div>
@@ -76,7 +76,7 @@ include "includes/init.inc.php";
 <!--------------------------------------------- JQUERY ----------------------------------------------->
 <script>
         $(document).ready(function(){
-            $('.remove-to-do').click(function(){
+            $('.remove-wish').click(function(){
                 const id = $(this).attr('id');
                 
                 $.post("app/remove.php", 
@@ -92,7 +92,7 @@ include "includes/init.inc.php";
             });
 
             $(".check-box").click(function(e){
-                const id = $(this).attr('data-todo-id');
+                const id = $(this).attr('data-wish-id');
                 
                 $.post('app/check.php', 
                       {
