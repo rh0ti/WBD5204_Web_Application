@@ -4,42 +4,41 @@ $conn = mysqli_connect("localhost", "root", "root", "wish_list");
 
 <?php
 
-$output = '';
+	$output = '';
 
+		if(isset($_POST["query"]))
+		{
+			$search = mysqli_real_escape_string($conn, $_POST["query"]);
+			$query = "
+			SELECT * FROM users 
+			WHERE name LIKE '%".$search."%'
+			OR email LIKE '%".$search."%' 
+			";
+		}
+		else
+		{
+			$query = "
+			SELECT * FROM users ORDER BY id";
+		}
+		$result = mysqli_query($conn, $query);
+		if(mysqli_num_rows($result) > 0)
+		{
+			$output .= '';
+			while($row = mysqli_fetch_array($result))
+			{
+				$output .= '
 
-if(isset($_POST["query"]))
-{
-	$search = mysqli_real_escape_string($conn, $_POST["query"]);
-	$query = "
-	SELECT * FROM users 
-	WHERE name LIKE '%".$search."%'
-	OR email LIKE '%".$search."%' 
-	";
-}
-else
-{
-	$query = "
-	SELECT * FROM users ORDER BY id";
-}
-$result = mysqli_query($conn, $query);
-if(mysqli_num_rows($result) > 0)
-{
-	$output .= '';
-	while($row = mysqli_fetch_array($result))
-	{
-		$output .= '
+				<div style="width:550px; ">
+					<div class="profile-pic" style="float:left; margin:15px; display:flex; justify-content:center; position:relative; " >
+					<a href="#" style="color:#707070;">'.$row["name"].'</a></div>
+				</div>
 
-		<div style="width:550px; ">
-			<div class="profile-pic" style="float:left; margin:15px; display:flex; justify-content:center; position:relative; " >
-			<a href="#" style="color:#707070;">'.$row["name"].'</a></div>
-		</div>
-
-		';
-	}
-	echo $output;
-}
-else
-{
-	echo 'Data Not Found';
-}
+				';
+			}
+			echo $output;
+		}
+		else
+		{
+			echo 'Data Not Found';
+		}
 ?>

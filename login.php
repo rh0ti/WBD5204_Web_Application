@@ -1,4 +1,6 @@
-<?php include "init.php";?>
+<?php include "includes/header.inc.php";?>
+
+
 <?php if(isset($_SESSION['id'])): ?>
   <?php header("location:profile.php"); ?>
 <?php endif; ?>
@@ -44,37 +46,23 @@ if(isset($_POST['login'])){
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="public/css/login.css">
-    <title>PHP Projekt</title>
-</head>
+<!-- LOGIN CSS -->
+<link rel="stylesheet" href="public/css/login.css">
 
  <!--------------------------------------------- PHP - Navigation ----------------------------------------------->   
     
 <section id="login-page">
 
     <div class="navigation">
-    <img src="public/img/logo.png" alt="">
-    <h1 class="logo-title">WISHLIIST.</h1>
-
-    <a class="login-button" href="index.php">Home</a>
-
-    <a class="signup-button" href="signup.php">Sign Up</a>
-
+      <img src="public/img/logo.png" alt="">
+      <h1 class="logo-title">WISHLIIST.</h1>
+      <a class="login-button" href="index.php">Home</a>
+      <a class="signup-button" href="signup.php">Sign Up</a>
     </div>
-
-
-<div class="box">
-    <h1>Login</h1>
-    <p>Noch kein Account? <a href="signup.php">Signup</a></p>
-</div>
-
+    <div class="box">
+        <h1>Login</h1>
+        <p>Noch kein Account? <a href="signup.php">Signup</a></p>
+    </div>
 
 <!--------------------------------------------------- Login Formular --------------------------------------------------------->    
 
@@ -103,9 +91,7 @@ if(isset($_POST['login'])){
             <?php endif; ?>
         <?php unset($_SESSION['account_created']); ?>
     </form>
-
 </section>
-
 
 <div class="circle1"></div>
 <div class="circle2"></div>

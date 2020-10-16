@@ -1,5 +1,8 @@
 <?php
-include "init.php";
+include "includes/header.inc.php";
+?>
+
+<?php
 if(isset($_SESSION['id'])){
   header("location:../discover.php");
 }
@@ -56,71 +59,55 @@ if(isset($_POST['signup'])){
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="public/css/signup.css">
-    <title>PHP Projekt</title>
-</head>
+<!--------------------------------------------- SIGNUP HTML ----------------------------------------------->
+
+<!-- SIGNUP CSS -->
+<link rel="stylesheet" href="public/css/signup.css">
     
 <section id="signup-page">
-
-<div class="navigation">
-<img src="public/img/logo.png" alt="">
-<h1 class="logo-title">WISHLIIST.</h1>
-
-
-<a class="login-button" href="index.php">Home</a>
-
-<a class="signup-button" href="login.php">Login</a>
-
-</div>
-
-<div class="box">
-    <h1>Registrierung</h1>
-    <p>Hast du bereits einen Account? <a class="link-button" href="login.php">Login</a></p>
-</div>
-
+  <div class="navigation">
+    <img src="public/img/logo.png" alt="">
+    <h1 class="logo-title">WISHLIIST.</h1>
+    <a class="login-button" href="index.php">Home</a>
+    <a class="signup-button" href="login.php">Login</a>
+  </div>
+  <div class="box">
+      <h1>Registrierung</h1>
+      <p>Hast du bereits einen Account? <a class="link-button" href="login.php">Login</a></p>
+  </div>
 
 <!--------------------------------------------- SIGNUP FORMULAR ----------------------------------------------->
 
-        <form class="form" action="" method="post">
-            <input type="text" name="uid" class="username" placeholder="Enter Name" value="<?php if(!empty($data['name'])): echo $data['name']; endif; ?>">
-            <div class="error">
-                <?php if(!empty($data['name_error'])): ?>
-                    <?php echo $data['name_error']; ?>
-                <?php endif; ?>
-            <br>
-            <input type="email" name="email" class="email" placeholder="Enter Email" value="<?php if(!empty($data['email'])): echo $data['email']; endif; ?>">
-                <div class="error">
-                    <?php if(!empty($data['email_error'])): ?>
-                        <?php echo $data['email_error']; ?>
-                    <?php endif; ?>
-            <br>
-            <input type="password" name="password" class="password" placeholder="Create Password" value="<?php if(!empty($data['password'])): echo $data['password']; endif; ?>">
-                <div class="error">
-                    <?php if(!empty($data['password_error'])): ?>
-                        <?php echo $data['password_error']; ?>
-                    <?php endif; ?>
-            <br>
-            <input type="password" name="confirm" class="password2" placeholder="Confirm Password" value="<?php if(!empty($data['confirm_password'])): echo $data['confirm_password']; endif; ?>">
-                <div class="error">
-                    <?php if(!empty($data['confirm_error'])): ?>
-                        <?php echo $data['confirm_error']; ?>
-                    <?php endif; ?>
-            <br>
-            <button class="button" type="submit" name="signup">Signup</button>
-        </form>
+  <form class="form" action="" method="post">
+      <input type="text" name="uid" class="username" placeholder="Enter Name" value="<?php if(!empty($data['name'])): echo $data['name']; endif; ?>">
+      <div class="error">
+          <?php if(!empty($data['name_error'])): ?>
+              <?php echo $data['name_error']; ?>
+          <?php endif; ?>
+      <br>
+      <input type="email" name="email" class="email" placeholder="Enter Email" value="<?php if(!empty($data['email'])): echo $data['email']; endif; ?>">
+          <div class="error">
+              <?php if(!empty($data['email_error'])): ?>
+                  <?php echo $data['email_error']; ?>
+              <?php endif; ?>
+      <br>
+      <input type="password" name="password" class="password" placeholder="Create Password" value="<?php if(!empty($data['password'])): echo $data['password']; endif; ?>">
+          <div class="error">
+              <?php if(!empty($data['password_error'])): ?>
+                  <?php echo $data['password_error']; ?>
+              <?php endif; ?>
+      <br>
+      <input type="password" name="confirm" class="password2" placeholder="Confirm Password" value="<?php if(!empty($data['confirm_password'])): echo $data['confirm_password']; endif; ?>">
+          <div class="error">
+              <?php if(!empty($data['confirm_error'])): ?>
+                  <?php echo $data['confirm_error']; ?>
+              <?php endif; ?>
+      <br>
+      <button class="button" type="submit" name="signup">Signup</button>
+  </form>
 
-
-
-<div class="circle1"></div>
-<div class="circle2"></div>
-
+  <div class="circle1"></div>
+  <div class="circle2"></div>
 </section>
 
 <?php
