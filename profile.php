@@ -10,7 +10,6 @@ include "includes/navigation.inc.php";
 <!-- PROFILE CSS -->
 <link rel="stylesheet" href="public/css/profile.css">
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 
 <section id="profile-page">
     <div class="container-title">
@@ -42,81 +41,44 @@ include "includes/navigation.inc.php";
         
     </div>
 
+    <br>
+
     <div class="container-item">
-        <div class="item">    
-            <p>Kamera</p>
-        </div>
-        <div class="item">    
-            <p>Kamera</p>
-        </div>
-        <div class="item">    
-            <p>Kamera</p>
-        </div>
-        <div class="item">    
-            <p>Kamera</p>
-        </div>
-        <div class="item">    
-            <p>Kamera</p>
-        </div>
-        <div class="item">    
-            <p>Kamera</p>
-        </div>
-        <div class="item">    
-            <p>Kamera</p>
-        </div>
-    </div>
+
+    <?php
+    $conn = mysqli_connect("localhost", "root", "root", "wish_list");
+    ?>
+
+        <?php
+
+            $sql = ("SELECT * FROM wishes");
+            $result = mysqli_query($conn, $sql);
+            if(mysqli_num_rows($result) > 0) {
+                while($row = mysqli_fetch_assoc($result)){
+                echo "<div class='item' style='color:#707070;font-size: 23px;' >";
+                echo $row['title'];
+                echo "</div>";
+                }
+            }else{
+                echo "<p style='font-size:23px; width:500px; position:relative; left:100px; top:10px; z-index:8;' >";
+                echo "Du hast noch keine wishes hinzugefügt.";
+                echo "</p>";
+            };
+
+        ?>
+
+
+
 </section>
 
 <div class="circle1"></div>
 <div class="circle2"></div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 
-
-<?php
+<!-- <?php
 require "includes/footer.inc.php"
-?>
+?> -->
 
 
-<!--------------------------------------------- JQUERY ----------------------------------------------->
 
-
-<?php
-$conn = mysqli_connect("localhost", "root", "root", "wish_list");
-	$output = '';
-
-		if(isset($_POST["query"]))
-		{
-			$search = mysqli_real_escape_string($conn, $_POST["query"]);
-			$query = "
-			SELECT * FROM users 
-			WHERE name LIKE '%".$search."%'
-			OR email LIKE '%".$search."%' 
-			";
-		}
-		else
-		{
-			$query = "
-			SELECT * FROM wishes ";
-		}
-		$result = mysqli_query($conn, $query);
-		if(mysqli_num_rows($result) > 0)
-		{
-			$output .= '';
-			while($row = mysqli_fetch_array($result))
-			{
-				$output .= '
-
-				<div style="width:550px; ">
-					<div class="profile-pic" style="float:left; margin:15px; display:flex; justify-content:center; align-items:center; position:relative; " >
-					<a href="guest-profile.php" style="color:#707070; font-size: 23px; text-decoration: none; ">'.$row["title"].'</a></div>
-				</div>
-
-				';
-			}
-			echo $output;
-		}
-		else
-		{
-			echo 'Data Not Found';
-		}
-?>

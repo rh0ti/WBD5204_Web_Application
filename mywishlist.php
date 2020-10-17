@@ -1,5 +1,5 @@
 <?php 
-require 'classes/db_conn.php';
+require 'includes/db_conn.inc.php';
 include "includes/navigation.inc.php";
 include "includes/init.inc.php";
 ?>

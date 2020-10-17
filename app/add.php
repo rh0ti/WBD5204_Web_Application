@@ -1,7 +1,7 @@
 <?php
 
 if(isset($_POST['title'])){
-    require '../classes/db_conn.php';
+    require '../includes/db_conn.inc.php';
 
     $title = $_POST['title'];
 

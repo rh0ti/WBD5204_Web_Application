@@ -13,8 +13,6 @@ class source extends db {
       $this->Query = $this->db->prepare($query);
       return $this->Query->execute($param);
     }
-
-
   }
   public function CountRows(){
     return $this->Query->rowCount();
@@ -29,4 +27,4 @@ class source extends db {
   }
 }
 
-?>
+// ?> 

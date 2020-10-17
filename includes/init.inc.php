@@ -6,6 +6,6 @@ spl_autoload_register(function($class_name){
 
 });
 
-$source = new source;
+ $source = new source;
 
 ?> 

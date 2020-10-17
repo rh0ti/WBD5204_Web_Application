@@ -1,12 +1,16 @@
 <?php
+
+//Klasse definieren
 class db {
 
+  //Eigenschaft definieren
   private $host = "localhost";
   private $username = "root";
   private $password = "root";
   private $database = "wish_list";
   protected $db;
 
+  //Konstruktor aufrufen
   public function __construct(){
     try {
 

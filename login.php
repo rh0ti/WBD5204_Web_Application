@@ -22,12 +22,6 @@ if(isset($_POST['login'])){
     $data['password_error'] = "Password is required";
   }
 
-  $_SESSION['profile'] = " " .$name . " ";
-  $_SESSION['id'] = $id;
-
-
-
-
   if(empty($data['email_error']) && empty($data['password_error'])){
     if($source->Query("SELECT * FROM users WHERE email = ?", [$data['email']])){
       if($source->CountRows() > 0){

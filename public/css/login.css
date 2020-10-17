@@ -125,11 +125,11 @@ p{
 }
 
 .button:hover, .button:active {
-    background-color: red;
+    background-color: #707070;
   }
 
 .login-button:hover, .login-button:active {
-    background-color: red;
+    background-color: rgb(56, 171, 238);
 }
 
 .link-button:hover, .link-button:active {

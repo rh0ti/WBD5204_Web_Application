@@ -13,7 +13,7 @@ include "includes/navigation.inc.php";
 <section id="profile-page">
     <div class="container-title">
         <h2>W I S H L I S T</h2>
-        <h1>Marco</h1>
+        <h1>John</h1>
 
         <img class="profile-picture" src="public/img/cat2.jpg" alt="">
 

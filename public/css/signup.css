@@ -69,8 +69,9 @@ body{
     top: 15%;
 }
 
+
 a:hover, a:active {
-    background-color: red;
+    background-color: #707070;
   }
   
 
@@ -128,7 +129,8 @@ p{
 }
 
 .button:hover, .button:active {
-    background-color: red;
+    background-color: #707070;
+    text-decoration: none;
   }
 
  /* ------------------------------------------ Background Circle ------------------------------------------ */ 

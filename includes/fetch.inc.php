@@ -30,7 +30,7 @@ $conn = mysqli_connect("localhost", "root", "root", "wish_list");
 
 				<div style="width:550px; ">
 					<div class="profile-pic" style="float:left; margin:15px; display:flex; justify-content:center; align-items:center; position:relative; " >
-					<a href="guest-profile.php" style="color:#707070; font-size: 23px; text-decoration: none; ">'.$row["name"].'</a></div>
+					<a href="guest-profile.php" style="color:#fff; font-size: 23px; text-decoration: none; ">'.$row["name"].'</a></div>
 				</div>
 
 				';
