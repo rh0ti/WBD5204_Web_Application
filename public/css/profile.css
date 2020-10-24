@@ -74,7 +74,7 @@ body{
 }
 
 a:hover, a:active {
-    background-color: red;
+    background-color: rgb(56, 216, 35);
   }
 
  /* ------------------------------------------ Background Circle ------------------------------------------ */ 
